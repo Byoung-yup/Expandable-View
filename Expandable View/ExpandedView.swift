@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-struct ExpandedView: View {
+struct ExpandedView: View, Identifiable {
+    var id = UUID()
+    @ViewBuilder var content: any View
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+            AnyView(content)
+        
     }
-}
-
-#Preview {
-    ExpandedView()
 }
